@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Kata2.CalculateMean(new int[] { 1, 2, 3, 4 }));
-            
+            Console.WriteLine(Kata5.ConvertToCipher("Test"));
 
         }
     }

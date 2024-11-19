@@ -61,5 +61,13 @@ namespace tdd_communication.Tests
 
             //Kata4.GetOpinion();
         }
+
+        [TestCase("test", "grfg", TestName = "Returns grfg when given test.")]
+        [TestCase("Test", "Grfg", TestName = "Returns Grfg when given test.")]
+        [TestCase("Test again 13!", "Grfg ntnva 13!", TestName = "Returns Grfg ntvna 13! when given Test again 13!")]
+        public void CipherTest_1(string input, string expected)
+        {
+            Kata5.ConvertToCipher(input).Should().Be(expected);
+        }
     }
 }
