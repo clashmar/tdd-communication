@@ -39,5 +39,15 @@ namespace tdd_communication.Tests
         {
             Assert.Throws<ArgumentException>(() => Kata2.CalculateMean(array));
         }
+
+        [Test]
+        [TestCase("", 0, TestName = "Return 0 when passed an empty string.")]
+        [TestCase("a", 97, TestName = "Return 0 when passed an empty string.")]
+        [TestCase("northcoders", 1195, TestName = "Return 0 when passed an empty string.")]
+        [TestCase("Northcoders", 1163, TestName = "Return 0 when passed an empty string.")]
+        public void SumCodesTest_1(string input, int output)
+        {
+            Kata3.SumCodes(input).Should().Be(output);
+        }
     }
 }
