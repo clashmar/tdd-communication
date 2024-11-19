@@ -86,5 +86,15 @@ namespace tdd_communication.Tests
             Assert.Throws<ArgumentException>(() => Kata6.CheeseChasers(chase, catSpeed, mouseSpeed));
         }
 
+        [TestCase("--K---M-C--", 2, 3, "Cheese")]
+        [TestCase("--K----C-M-", 1, -2, "Cheese")]
+        [TestCase("--K-C-M-", 3, 2, "No Cheese")]
+        [TestCase("--K-C-M-", 1, -1, "Cheese party!")]
+        [TestCase("---C-M---K ", -1, -1, "Cheese")]
+        public void NewCheeseTest(string chase, int catSpeed, int mouseSpeed, string expected)
+        {
+            Kata7.CheeseChasers(chase, catSpeed, mouseSpeed).Should().Be(expected);
+        }
+
     }
 }

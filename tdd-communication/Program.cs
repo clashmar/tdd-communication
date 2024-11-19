@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Kata5.ConvertToCipher("Test"));
+            Kata7.CheeseChasers("--K---M-C--", 2, 3);
 
         }
     }
