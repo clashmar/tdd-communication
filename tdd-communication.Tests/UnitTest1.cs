@@ -69,5 +69,22 @@ namespace tdd_communication.Tests
         {
             Kata5.ConvertToCipher(input).Should().Be(expected);
         }
+
+        [TestCase("--K---M-C--", 2, 3, "Cheese")]
+        [TestCase("--K---M-C--", 2, 0, "No cheese")]
+        [TestCase("--KM-C--", 3, 3, "Cheese party!")]
+        public void CheeseTest(string chase, int catSpeed, int mouseSpeed, string expected)
+        {
+            Kata6.CheeseChasers(chase, catSpeed, mouseSpeed).Should().Be(expected);
+        }
+
+        [TestCase("--K-----CM-", 2, 3)]
+        [TestCase("--K----M-C", 0, 0)]
+        [TestCase("---CM-K", 2, 3)]
+        public void CheeseTestError(string chase, int catSpeed, int mouseSpeed)
+        {
+            Assert.Throws<ArgumentException>(() => Kata6.CheeseChasers(chase, catSpeed, mouseSpeed));
+        }
+
     }
 }
