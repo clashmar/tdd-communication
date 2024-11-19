@@ -96,5 +96,13 @@ namespace tdd_communication.Tests
             Kata7.CheeseChasers(chase, catSpeed, mouseSpeed).Should().Be(expected);
         }
 
+        [TestCase(new int[] { 2, 1, 3}, new int[] {1,2,3})]
+        [TestCase(new int[] { 1 }, new int[] { 1 })]
+        [TestCase(new int[] {  }, new int[] {  })]
+        [TestCase(new int[] { 2, 1, 3, 6, 7, 4, 3 , 2, 1 }, new int[] { 1, 1, 2, 2, 3, 3, 4, 6, 7 })]
+        public void BubbleSortTest(int[] arrayToSort, int[] expectedArray)
+        {
+            Sorting.BubbleSort.Sort(arrayToSort).Should().BeEquivalentTo(expectedArray);
+        }
     }
 }
