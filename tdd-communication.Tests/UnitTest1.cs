@@ -25,7 +25,7 @@ namespace tdd_communication.Tests
             Kata1.SumMiddleNumbers(array).Should().Be(number);
         }
 
-        [TestCase(new int[] { 1, 2, 3, 4}, 2.5, TestName = "Return 2.5 when passed 1,2,3,4")]
+        [TestCase(new int[] { 1, 2, 3, 4 }, 2.5, TestName = "Return 2.5 when passed 1,2,3,4")]
 
         [TestCase(new int[] { 2 }, 2, TestName = "Return 2 on one value array")]
 
@@ -48,6 +48,18 @@ namespace tdd_communication.Tests
         public void SumCodesTest_1(string input, int output)
         {
             Kata3.SumCodes(input).Should().Be(output);
+        }
+
+        [TestCase(new Kata4.Opinion[] { Kata4.Opinion.LIKE }, Kata4.Opinion.LIKE, TestName = "One like = Like")]
+        [TestCase(new Kata4.Opinion[] { Kata4.Opinion.LIKE, Kata4.Opinion.LIKE }, Kata4.Opinion.NEUTRAL, TestName = "Two like = neutral")]
+        [TestCase(new Kata4.Opinion[] { Kata4.Opinion.LIKE, Kata4.Opinion.DISLIKE }, Kata4.Opinion.NEUTRAL, TestName = "Even like/dislike = neutral")]
+        [TestCase(new Kata4.Opinion[] { Kata4.Opinion.LIKE, Kata4.Opinion.DISLIKE, Kata4.Opinion.LIKE, Kata4.Opinion.DISLIKE }, Kata4.Opinion.NEUTRAL, TestName = "Even like/dislike = neutral")]
+        public void CheckOpinions(Kata4.Opinion[] opinionsArray, Kata4.Opinion expectedOpinion)
+        {
+            List<Kata4.Opinion> opinionsList = opinionsArray.ToList();
+            Kata4.GetOpinion(opinionsList).Should().Be(expectedOpinion);
+
+            //Kata4.GetOpinion();
         }
     }
 }
