@@ -24,5 +24,20 @@ namespace tdd_communication.Tests
         {
             Kata1.SumMiddleNumbers(array).Should().Be(number);
         }
+
+        [TestCase(new int[] { 1, 2, 3, 4}, 2.5, TestName = "Return 2.5 when passed 1,2,3,4")]
+
+        [TestCase(new int[] { 2 }, 2, TestName = "Return 2 on one value array")]
+
+        public void CalculateMeanTest(int[] array, double expectedValue)
+        {
+            Kata2.CalculateMean(array).Should().Be(expectedValue);
+        }
+
+        [TestCase(new int[] { }, TestName = "Return argument exception error when passed empty array")]
+        public void CalculateMeanTestEmptyArray(int[] array)
+        {
+            Assert.Throws<ArgumentException>(() => Kata2.CalculateMean(array));
+        }
     }
 }

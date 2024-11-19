@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine(Kata2.CalculateMean(new int[] { 1, 2, 3, 4 }));
+            
+
         }
     }
 }
