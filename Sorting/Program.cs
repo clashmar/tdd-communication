@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            SelectionSort.Sort(new int[] { 2, 1, 3, 6, 7, 4, 3, 2, 1 });
         }
     }
 }
